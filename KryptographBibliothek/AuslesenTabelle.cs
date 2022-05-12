@@ -1,6 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 namespace KryptographBibliothek
+
+
 {
     public class AuslesenTabelle
     {
@@ -10,23 +13,19 @@ namespace KryptographBibliothek
             Console.WriteLine("Bitte geben sie ein E für den Englischen Text oder D für den Deutschen Text");
             String Text = Console.ReadLine();
 
-
-
-
-
             if (Text == "D")
             {
 
+                Dictionary<string, string> Tabelle_deutsch = new Dictionary<string, string>();
 
-                string[] text = File.ReadAllLines(@"C:\Users\tim.g33\Source\Repos\BFT_Black_Hawks_Kryptograph1\Deutsch_Wahrscheinlichkeiten.txt");
+                string[] text = File.ReadAllLines(@"C:\Users\tim.g33\Source\Repos\BFT_Black_Hawks_Kryptograph\Deutsch_Wahrscheinlichkeiten.txt");
 
                 foreach (string line in text)
                 {
+                    Console.WriteLine(line);
                     string[] daten = line.Split(' ');
                     string[] daten2 = daten[0].Split('\t');
-                    int nummer = int.Parse(daten[0]);
-                    string name = daten[1];
-                    double gehalt = double.Parse(daten[2]);
+                    Tabelle_deutsch.Add("txt", "notepad.exe");
 
 
                 }
@@ -39,14 +38,15 @@ namespace KryptographBibliothek
             if (Text=="E")
 
             {
-                string[] text1 = File.ReadAllLines(@"C:\Users\tim.g33\Source\Repos\BFT_Black_Hawks_Kryptograph1\Englisch_Wahrscheinlichkeiten.txt");
+                Dictionary<string, string> Tabelle_Englisch = new Dictionary<string, string>();
+                string[] text1 = File.ReadAllLines(@"C:\Users\tim.g33\Source\Repos\BFT_Black_Hawks_Kryptograph\Englisch_Wahrscheinlichkeiten.txt");
 
-                foreach (string text2 in text1)
+                foreach (string line in text1)
                 {
-                    string[] daten = text2.Split(';');
-                    int nummer = int.Parse(daten[0]);
-                    string name = daten[1];
-                    double gehalt = double.Parse(daten[2]);
+                    Console.WriteLine(line);
+                    string[] daten = line.Split(' ');
+                    string[] daten2 = daten[0].Split('\t');
+                    Tabelle_Englisch.Add("txt", "notepad.exe");
 
 
                 }
