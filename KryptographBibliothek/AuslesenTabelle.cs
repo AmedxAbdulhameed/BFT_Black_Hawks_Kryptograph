@@ -12,21 +12,20 @@ namespace KryptographBibliothek
         {
             Console.WriteLine("Bitte geben sie ein E für den Englischen Text oder D für den Deutschen Text");
             String Text = Console.ReadLine();
+            Dictionary<string, double> Tabelle = new Dictionary<string, double>();
 
             if (Text == "D")
             {
 
-                Dictionary<string, string> Tabelle_deutsch = new Dictionary<string, string>();
+
 
                 string[] text = File.ReadAllLines(@"C:\Users\tim.g33\Source\Repos\BFT_Black_Hawks_Kryptograph\Deutsch_Wahrscheinlichkeiten.txt");
 
                 foreach (string line in text)
                 {
                     Console.WriteLine(line);
-                    string[] daten = line.Split(' ');
-                    string[] daten2 = daten[0].Split('\t');
-                    Tabelle_deutsch.Add("txt", "notepad.exe");
-
+                    string[] daten = line.Split(' ','\t');
+                    Tabelle.Add(daten[0],Convert.ToDouble(daten[1]));
 
                 }
            
@@ -38,16 +37,14 @@ namespace KryptographBibliothek
             if (Text=="E")
 
             {
-                Dictionary<string, string> Tabelle_Englisch = new Dictionary<string, string>();
+              
                 string[] text1 = File.ReadAllLines(@"C:\Users\tim.g33\Source\Repos\BFT_Black_Hawks_Kryptograph\Englisch_Wahrscheinlichkeiten.txt");
 
                 foreach (string line in text1)
                 {
                     Console.WriteLine(line);
-                    string[] daten = line.Split(' ');
-                    string[] daten2 = daten[0].Split('\t');
-                    Tabelle_Englisch.Add("txt", "notepad.exe");
-
+                    string[] daten = line.Split(' ','\t');             
+                    Tabelle.Add(daten[0], Convert.ToDouble(daten[1]));
 
                 }
 
@@ -55,10 +52,6 @@ namespace KryptographBibliothek
 
 
             }
-
-
-
-
 
 
         }
