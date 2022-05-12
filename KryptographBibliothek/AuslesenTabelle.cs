@@ -17,8 +17,6 @@ namespace KryptographBibliothek
             if (Text == "D")
             {
 
-
-
                 string[] text = File.ReadAllLines(@"C:\Users\tim.g33\Source\Repos\BFT_Black_Hawks_Kryptograph\Deutsch_Wahrscheinlichkeiten.txt");
 
                 foreach (string line in text)
@@ -30,12 +28,8 @@ namespace KryptographBibliothek
                 }
            
             
-
-
-
             }
             if (Text=="E")
-
             {
               
                 string[] text1 = File.ReadAllLines(@"C:\Users\tim.g33\Source\Repos\BFT_Black_Hawks_Kryptograph\Englisch_Wahrscheinlichkeiten.txt");
