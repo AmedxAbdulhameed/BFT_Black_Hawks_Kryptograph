@@ -6,8 +6,12 @@ namespace StartKryptograph
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            KryptographBibliothek.AuslesenTabelle.AuslesenTab();
+     
+           System.Collections.Generic.Dictionary<string,double> name = KryptographBibliothek.AuslesenTabelle.AuslesenTab();
+            foreach (var n in name)
+            {
+                Console.WriteLine(n.Value);
+            }
         }
     }
 }
