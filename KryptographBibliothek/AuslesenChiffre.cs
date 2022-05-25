@@ -7,7 +7,7 @@ namespace KryptographBibliothek
     public class AuslesenChiffre
     {
          public static void Auslesen( )
-        {
+         {
             
 
             
@@ -25,7 +25,7 @@ namespace KryptographBibliothek
 
 
 
-        }
+         }
 
 
 
