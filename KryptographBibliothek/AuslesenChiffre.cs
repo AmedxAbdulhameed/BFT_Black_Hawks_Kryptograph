@@ -4,16 +4,17 @@ using System.Text;
 namespace KryptographBibliothek
 {
 
-    public class FileName
+    public class AuslesenChiffre
     {
-         static void Auslesen( )
+         public static void Auslesen( )
         {
             
 
             
             foreach (string line in System.IO.File.ReadLines(@"c:\Chiffre.txt"))
             {
-                System.Console.WriteLine(line);
+              
+
                 
             }
 
