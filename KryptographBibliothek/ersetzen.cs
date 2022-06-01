@@ -7,7 +7,7 @@ namespace KryptographBibliothek
 {
     public class Ersetzen
     {
-        public static void ZeichenErsetzen()
+        public static string ZeichenErsetzen(string Ersetzen)
 
         {
             string chiffre = "Kly ulbl";
@@ -80,11 +80,14 @@ namespace KryptographBibliothek
                 {
                     string key_chiffre = Chiffre_sorted.ElementAt(tabelle_chiffre.Count-1-i).Key;
                     chiffre = chiffre.Replace(' ', ',');
+                   
                 }
 
+                 
+                 
 
-            
 
+            return Ersetzen;
 
         }
 
