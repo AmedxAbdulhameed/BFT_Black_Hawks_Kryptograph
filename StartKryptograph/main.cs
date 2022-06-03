@@ -1,5 +1,6 @@
 using System;
 
+
 namespace StartKryptograph
 {
     class main
@@ -7,9 +8,14 @@ namespace StartKryptograph
         static void Main(string[] args)
         {
 
-           
+
+            string pfad = @"c:\Chiffre.txt";
+            string chiffre = KryptographBibliothek.AuslesenChiffre.Auslesen(pfad);
+
+          
          
  
+
         }
     }
 }
