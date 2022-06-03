@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace StartKryptograph
 {
@@ -6,7 +6,11 @@ namespace StartKryptograph
     {
         static void Main(string[] args)
         {
-            KryptographBibliothek.Menue.MainMenu();
+
+         
+            KryptographBibliothek.ZeichenZaehlen.Zeichenzaehlen();
+
+
         }
     }
 }
