@@ -7,10 +7,9 @@ namespace StartKryptograph
         static void Main(string[] args)
         {
 
+           
          
-            KryptographBibliothek.ZeichenZaehlen.Zeichenzaehlen();
-
-
+ 
         }
     }
 }
