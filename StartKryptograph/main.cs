@@ -9,10 +9,7 @@ namespace StartKryptograph
         {
 
 
-            string pfad = @"c:\Chiffre.txt";
-            string chiffre = KryptographBibliothek.AuslesenChiffre.Auslesen(pfad);
-
-          
+                     
          
  
 
