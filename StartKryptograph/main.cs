@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace StartKryptograph
 {
@@ -6,8 +6,10 @@ namespace StartKryptograph
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+         
             KryptographBibliothek.ZeichenZaehlen.Zeichenzaehlen();
+
 
         }
     }
