@@ -9,9 +9,9 @@ namespace StartKryptograph
         {
 
 
-                     
-         
- 
+            KryptographBibliothek.Menue.MainMenu();
+
+
 
         }
     }

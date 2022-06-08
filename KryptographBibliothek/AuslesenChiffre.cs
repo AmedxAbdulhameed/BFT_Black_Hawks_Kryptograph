@@ -6,20 +6,16 @@ namespace KryptographBibliothek
 
     public class AuslesenChiffre
     {
-         public static void Auslesen( )
+        
+
+        public static string Auslesen( )
          {
-            //wie gebe ich durch einen pfad den inhalt einer textdatei in c# aus?
 
-            //------------------------------------------------
-
+        
             string text = System.IO.File.ReadAllText(pfad);
 
-            string chiffre =   text;
-
-
-            //-----------------------------------
-
-            return chiffre;
+          
+            return text;
 
          }
 

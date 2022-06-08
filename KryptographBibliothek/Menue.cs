@@ -1,7 +1,7 @@
 ﻿using System;
 using Figgle;
 using System.IO;
-using System.Collections;
+using System.Collections.Generic;
 
 
 namespace KryptographBibliothek
@@ -12,10 +12,12 @@ namespace KryptographBibliothek
         public static void MainMenu()
         {
 
-
-            string pfad;
-
-
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Clear();
+            bool Exit = false;
+            bool flag = false;
+            string chiffre = "";
+            string dateipfad = "";
 
 
             do
@@ -39,46 +41,56 @@ namespace KryptographBibliothek
 
 
                 //Eingabeaufforderung.
-                
-                Console.Write("Bitte Geben Sie Pfad ein:\n");
-                pfad = Console.ReadLine();
-               bool result= File.Exists(pfad);
-                if(result == true)
+
+                Console.WriteLine("Bitte geben Sie den Pfad der Chiffre an.:\n");
+                Console.Write("Eingabe:");
+                dateipfad = Console.ReadLine();
+                //fragt dateipfad ab
+                switch (dateipfad)
                 {
-
-                }
-                else
-                {
-                    Console.WriteLine("Pfas nicht existent");
-
-                }
-                 
-
-
-                    switch (pfad)
-                    {
-                     
-                     
-
-                       case "exit":
-                        Environment.Exit(0);
-                        break;
-
-                      default:
+                    case "exit":
                         
-                            Console.WriteLine("Ungültige Eingabe");
-                        Console.ReadKey();
-
-                        (int, int) cPosAM = Console.GetCursorPosition();
-
-
-                        KonsolenExtrasBibliothek.Extras.ClearCurrentConsoleLine(cPosBM.Item2, cPosAM.Item2);
-
                         break;
-                    }
+                    default:
+                        flag = Pfadprüfer(dateipfad);
+                        if (flag)
+                        {
+                            string get = KryptographBibliothek.Entfernen.Zeichen_Entfernen();
+                            var chiffretabelle = new Dictionary<string, double>();
+                            chiffretabelle = KryptographBibliothek.ZeichenZaehlen.Zeichenzaehlen();
+                           // string fertig_chiff = KryptographBibliothek.Zeichenersetzen.Ersetzen(get, chiffretabelle);
+                           // KryptographBibliothek.Ausgabe.AusgabenZeichen(chiffre, fertig_chiff);
 
 
-            } while (true);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Detiepfad nicht gefunden");
+                        }
+                        break;
+                }
+
+
+
+            } while (!flag);
+            if (Exit)
+            {
+                Environment.Exit(0);
+            }
+        }
+        public static bool Pfadprüfer(string pfad)
+        {
+            if (File.Exists(pfad))
+            {
+                Console.WriteLine("der Pfad '{0}'existiert.", pfad);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("{0} ist kein richtig angegebener Pfad.", pfad);
+                return false;
+            }
         }
     }
 }
