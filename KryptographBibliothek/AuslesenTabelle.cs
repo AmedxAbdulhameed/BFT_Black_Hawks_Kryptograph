@@ -18,7 +18,7 @@ namespace KryptographBibliothek
             if (Text == "D")
             {
 
-                string[] text = System.IO.File.ReadAllLines(@"c:\..\../Deutsch_Wahrscheinlichkeiten.txt");
+                string[] text = System.IO.File.ReadAllLines(@"../../../../Deutsch_Wahrscheinlichkeiten.txt");
 
                 foreach (string line in text)
                 {
@@ -35,7 +35,7 @@ namespace KryptographBibliothek
             if (Text == "E")
             {
 
-                string[] text1 = File.ReadAllLines(@"c:\..\../Englisch_Wahrscheinlichkeiten.txt");
+                string[] text1 = File.ReadAllLines(@"../../../../Englisch_Wahrscheinlichkeiten.txt");
 
                 foreach (string line in text1)
                 {
