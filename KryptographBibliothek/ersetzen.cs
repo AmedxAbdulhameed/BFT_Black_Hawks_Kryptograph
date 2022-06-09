@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace KryptographBibliothek
 {
@@ -10,46 +11,32 @@ namespace KryptographBibliothek
         public static string ZeichenErsetzen(string chiffre, Dictionary<String, double> tabelle_chiffre, Dictionary<String, double> tabelle_sprache)
 
         {
-
-            string klartext="";
-
-            //1. beide Tabellen sortieren
-
-            //
+            
+            chiffre = chiffre.ToUpper();
             var tabelle_sprache_sorted = from entry in tabelle_sprache orderby entry.Value descending select entry;
-            var tabelle_chiffre_sorted = from entry in tabelle_chiffre orderby entry.Value descending select entry;
+            var tabelle_chiffre_sorted = from entry in tabelle_chiffre orderby entry.Value ascending select entry;
+            StringBuilder ch = new StringBuilder(chiffre);
+            int index = 0;
 
-            Console.ReadKey();
-            //foreach (KeyValuePair<string, double> kvp in Capital_sorted)
-            //    {
-            //        //textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-            //        Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-            //    }
+            for (int i = 0; i < chiffre.Length; i++)
+            {
 
+                for (int r = 0; r < tabelle_chiffre.Count; r++)
+                {
+                    if (tabelle_chiffre.Keys.ElementAt(r) == chiffre[i].ToString())
+                    index = r;
+                     
+                   
 
-            //    Console.WriteLine("______________________________");
-            //    var Chiffre_sorted = from entry in tabelle_chiffre orderby entry.Value ascending select entry;
-
-
-            //    foreach (KeyValuePair<string, double> kvp in Chiffre_sorted)
-            //    {
-            //        //textBox3.Text += ("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-            //        Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
-            //    }
+                }
+                ch[i] = tabelle_sprache.Keys.ElementAt(index).ToCharArray()[0];
 
 
-            //    for(int i =0; i < Chiffre_sorted.Count(); i++)
-            //    {
-            //        string key_chiffre = Chiffre_sorted.ElementAt(tabelle_chiffre.Count-1-i).Key;
-            //        chiffre = chiffre.Replace(' ', ',');
-                 
-            //    }
-
-                 
-                 
+            }
 
 
-            return klartext;
+            Console.WriteLine(ch.ToString());
+            return ch.ToString();
 
         }
 
